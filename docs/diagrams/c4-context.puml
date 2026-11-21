@@ -1,0 +1,24 @@
+@startuml
+title Контекстна діаграма системи «TrendWave» (C4 Context)
+skinparam rectangle {
+  roundCorner 12
+}
+
+actor "Гість" as Guest
+actor "Покупець" as Customer
+actor "Менеджер" as Manager
+actor "Адміністратор" as Admin
+
+rectangle "Інтернет-магазин одягу\n«TrendWave»" as System #E3F2FD
+
+rectangle "Служба доставки\n(Нова Пошта / Укрпошта API)" as Delivery #F5F5F5
+rectangle "Платіжний шлюз\n(Еквайринг)" as Payment #F5F5F5
+
+Guest --> System : перегляд каталогу,\nпідбір розміру, замовлення
+Customer --> System : збереження замірів,\nзамовлення, відстеження, відгуки
+Manager --> System : керування товарами,\nзалишками, статусами та ТТН
+Admin --> System : керування ролями\nта обліковими записами
+
+System --> Delivery : розрахунок доставки,\nперевірка статусу ТТН
+System --> Payment : проведення онлайн-оплати
+@enduml
