@@ -1,0 +1,27 @@
+@startuml
+title Тренувальна діаграма: Класи (Інтернет-магазин)
+
+class Customer {
+  - id: int
+  - name: string
+  - email: string
+  + register(): void
+}
+
+class Order {
+  - id: int
+  - createdAt: date
+  - totalSum: decimal
+  + confirm(): void
+}
+
+class Product {
+  - id: int
+  - title: string
+  - price: decimal
+  + updatePrice(newPrice: decimal): void
+}
+
+Customer "1" -- "0..*" Order : оформлює >
+Order "1..*" -- "1..*" Product : містить >
+@enduml
