@@ -1,0 +1,12 @@
+@startuml
+title Тренувальна діаграма: Послідовність (Інтернет-магазин)
+
+actor "Покупець" as Buyer
+participant "Кошик" as Cart
+participant "Сервіс замовлень" as OrderService
+
+Buyer -> Cart : 1. Додати товар
+Cart --> Buyer : 2. Оновити суму кошика
+Buyer -> OrderService : 3. Підтвердити замовлення
+OrderService --> Buyer : 4. Повернути номер замовлення
+@enduml
