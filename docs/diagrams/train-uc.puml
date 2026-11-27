@@ -1,0 +1,17 @@
+@startuml
+title Тренувальна діаграма: Варіанти використання (Інтернет-магазин)
+left to right direction
+
+actor "Покупець" as Buyer
+actor "Адміністратор" as Admin
+
+rectangle "Інтернет-магазин" {
+  usecase "Перегляд товарів" as UC1
+  usecase "Оформлення замовлення" as UC2
+  usecase "Керування товарами" as UC3
+}
+
+Buyer --> UC1
+Buyer --> UC2
+Admin --> UC3
+@enduml
